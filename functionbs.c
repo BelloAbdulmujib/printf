@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_char - Prints char
- * @types: List aof arguments
+ * print_char - Function that Prints char
+ * @types: arguments list
  * @buffer: Buffer array to handleprint
- * @flags:  Calculates flags active
- * @width: Width
- * @precision: Precision spec
- * @size: Size spec
+ * @flags: active flags to be calculated
+ * @width: the Width
+ * @precision: spec's precision
+ * @size: spec's size
  * Return: Number of chars printed
  */
 
@@ -19,13 +19,13 @@ int print_char(va_list types, char buffer[],
 	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
 /**
- * print_string - Prints a string
- * @types: List a of arguments
+ * print_string - function that Prints a string
+ * @types: arguments list
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width.
+ * @flags:  active flags to be calculated
+ * @width: width
  * @precision: Precision specification
- * @size: Size specifier
+ * @size: specifier size
  * Return: Number of chars printed
  */
 int print_string(va_list types, char buffer[],
@@ -95,13 +95,13 @@ int print_percent(va_list types, char buffer[],
 	return (write(1, "%%", 1));
 }
 /**
- * print_int - Print int
+ * print_int - Function that Prints int
  * @types: List a of arguments
  * @buffer: Buffer array
- * @flags:  Calc active flags
- * @width: get width
- * @precision: Precision spec
- * @size: Size spec
+ * @flags: active flags to be calculated
+ * @width: the width
+ * @precision: spec's precision
+ * @size: spec's size
  * Return: Number of chars printed
  */
 
@@ -139,13 +139,13 @@ int print_int(va_list types, char buffer[],
 }
 
 /**
- * print_binary - Prints %u
- * @types: List a of arguments
+ * print_binary - function that Prints %u
+ * @types: arguments list
  * @buffer: Buffer array 
- * @flags:  Calcs active flags
- * @width: getwidth.
- * @precision: Precision spec
- * @size: Size spec
+ * @flags:  active flags to be calculated
+ * @width: width.
+ * @precision: spec's precision
+ * @size: pec's size
  * Return: Numbers of char printed.
  */
 
