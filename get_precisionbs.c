@@ -3,30 +3,30 @@
 /**
  * get_precision - Calcs the precision
  * @format: Formatted string in which sto print the arguments
- * @i: List of arguments to be printed
+ * @j: List of arguments to be printed
  * @list: list of arguments
  * Return: Prec.
  */
-int get_precision(const char *format, int *i, va_list list)
+int get_precision(const char *format, int *j, va_list list)
 {
-	int curr_i = *i + 1;
+	int curr_j = *j + 1;
 	int precision = -1;
 
-	if (format[curr_i] != '.')
+	if (format[curr_j] != '.')
 		return (precision);
 
 	precision = 0;
 
-	for (curr_i += 1; format[curr_i] != '\0'; curr_i++)
+	for (curr_j += 1; format[curr_j] != '\0'; curr_j++)
 	{
-		if (is_digit(format[curr_i]))
+		if (is_digit(format[curr_j]))
 		{
 			precision *= 10;
-			precision += format[curr_i] - '0';
+			precision += format[curr_j] - '0';
 		}
-		else if (format[curr_i] == '*')
+		else if (format[curr_j] == '*')
 		{
-			curr_i++;
+			curr_j++;
 			precision = va_arg(list, int);
 			break;
 		}
@@ -34,7 +34,7 @@ int get_precision(const char *format, int *i, va_list list)
 			break;
 	}
 
-	*i = curr_i - 1;
+	*j = curr_j - 1;
 
 	return (precision);
 }
